@@ -28,6 +28,8 @@
 .loginpagelogo{
     border-bottom: 5%;  
     border: 10%;
+    padding-left: 15%;
+    border-left: 25%;
 }
 
 .loginallborder{
@@ -40,8 +42,7 @@
     border-top: 5%;
 }
 
-.loginpagegraphics{
-    float: left;
-    border: 25%;
-    border: 25%;
+.welcomebackground{
+    background: url('../img/loginsidepic.png');
+    background-size: cover;
 }

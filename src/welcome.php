@@ -1,9 +1,11 @@
 <html>
 <body>
+<center>
+<h1> Welcome <?php echo $_POST["name"]; ?><br> </h1>
 
-Welcome <?php echo $_POST["name"]; ?><br>
 Your email address is: <?php echo $_POST["email"]; ?><br>
-welcome : <?php echo $_POST["date"]  ;?>;
+welcome : <?php echo $_POST["name"]  ;?>;
+</center>
 <?php
     $servername = "localhost";
     $username = "root";
@@ -13,6 +15,7 @@ welcome : <?php echo $_POST["date"]  ;?>;
     $email = $_POST["email"];
     $password = $_POST["password"];
     
+    $welcome_msg = "<h1>TEST SMS @ $name</h1>";
     // Create connection
     $conn = new mysqli($servername, $username, $password);
     
@@ -27,7 +30,7 @@ welcome : <?php echo $_POST["date"]  ;?>;
     VALUES ('$name','$email','$password')";
     
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo $welcome_msg;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
