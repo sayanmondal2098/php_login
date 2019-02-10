@@ -15,32 +15,6 @@
 </head>
 <body>
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "ph3n1x";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    echo "Connection error";
-} 
-// // echo "Connected";
-// $conn->query("select database testdb;");
-// $sql = "INSERT INTO testdb.userinfo (name, email, password)
-// VALUES ('test', 'john@example.com','testpass')";
-
-// if ($conn->query($sql) === TRUE) {
-//     echo "New record created successfully";
-// } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
-
-// $conn->close();
-?>
 <div class="">
 <div class="container col-md-12 border-left-2 loginbackground">
         <div class="">
