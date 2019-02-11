@@ -8,10 +8,9 @@ welcome : <?php echo $_POST["name"]  ; echo $_POST["repassword"];?>
 Birthday: <?php echo $_POST["date"]; ?>
 </center>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "ph3n1x";
+    require_once('sqlconnection.php');
 
+    
     $name = $_POST["name"];
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -19,15 +18,6 @@ Birthday: <?php echo $_POST["date"]; ?>
     $date = $_POST["date"];
     
     $welcome_msg = "<h1>TEST SMS @ $name</h1>";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-    
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        echo "Connection error";
-    } 
-    echo "Connected";
 
     $conn->query("select database testdb;");
     $sql = "INSERT INTO testdb.registration (name, email, password, repassword, date)

@@ -7,24 +7,15 @@ Your email address is: <?php echo $_POST["email"]; ?><br>
 welcome : <?php echo $_POST["name"]  ;?>;
 </center>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "ph3n1x";
+    
+    require_once('sqlconnection.php');
 
     $name = $_POST["name"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     
     $welcome_msg = "<h1>TEST SMS @ $name</h1>";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
     
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        echo "Connection error";
-    } 
-    // echo "Connected";
     $conn->query("select database testdb;");
     $sql = "INSERT INTO testdb.userinfo (name, email, password)
     VALUES ('$name','$email','$password')";
