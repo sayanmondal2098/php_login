@@ -8,7 +8,7 @@ welcome : <?php echo $_POST["name"]  ;?>;
 </center>
 <?php
     
-    require_once('sqlconnection.php');
+    require_once('./scripts/sqlconnection.php');
 
     $name = $_POST["name"];
     $email = $_POST["email"];
