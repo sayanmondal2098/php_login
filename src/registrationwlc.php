@@ -4,7 +4,8 @@
 <h1> Welcome <?php echo $_POST["name"]; ?><br> </h1>
 
 Your email address is: <?php echo $_POST["email"]; ?><br>
-welcome : <?php echo $_POST["name"]  ; echo $_POST["repassword"];?>
+welcome : <?php echo $_POST["name"]  ;?><br>
+<!-- PassWord : <?php echo $_POST["password"] ?> -->
 Birthday: <?php echo $_POST["date"]; ?>
 </center>
 <?php
@@ -33,3 +34,4 @@ Birthday: <?php echo $_POST["date"]; ?>
 ?>
 </body>
 </html>
+

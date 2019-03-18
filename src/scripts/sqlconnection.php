@@ -1,6 +1,11 @@
+<!--
+    It'll check connection with php
+-->
 <?php
+
+
 $servername = "localhost";
-$username = "root";
+$username = "ph3n1x";
 $password = "ph3n1x";
 
 // Create connection
@@ -11,5 +16,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     echo "Connection error";
 } 
-echo "Connected";
+else
+    {
+    echo "Connected with database";
+}
 ?>
