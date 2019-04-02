@@ -1,45 +1,33 @@
-<script>
-    console.log("TESTING.....")
-</script>
+<html>
+<body>
+<center>
+<h1> Welcome <?php echo $_POST["name"]; ?><br> </h1>
 
+Your email address is: <?php echo $_POST["email"]; ?><br>
+welcome : <?php echo $_POST["name"]  ;?>;
+</center>
 <?php
     
-    //require('./scripts/sqlconnection.php');
-    
-    //get value from index (login) file
+    require_once('./scripts/sqlconnection.php');
+
     $name = $_POST["name"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     
-    //to prevent sqlinjection
-    $name = stripcslashes($name);
-    $email = stripcslashes($email);
-    $password = stripslashes($password);
-
-    // $name = mysql_real_escape_string($name);
-    // $email = mysql_real_escape_string($email);
-    // $password = mysql_real_escape_string($password);
-
-    //mysql connection
-
+    $welcome_msg = "<h1>TEST SMS @ $name</h1>";
     
-    $servername = "localhost";
-    $username = "ph3n1x";
-    $password = "ph3n1x";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-    
-
-    //result
-    $name = string($name);
     $conn->query("select database testdb;");
-    $sql = "SELECT * FROM testdb where name=$name";
+    $sql = "INSERT INTO testdb.userinfo (name, email, password)
+    VALUES ('$name','$email','$password')";
     
-    echo([$sql]);
-    $row = mysql_fetch_array($sql);
-    echo($row);
+    if ($conn->query($sql) === TRUE) {
+        echo $welcome_msg;
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
     
     $conn->close();
     
 ?>
+</body>
+</html>

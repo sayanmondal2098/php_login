@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+Fitness Website
+-->
+<title>Everyday Atlas | Fitness as Part of your Life, Not your Whole Life</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+
+
+
+</head>
+<body>
+
+
+<!-- =========================
+     PRE LOADER       
+============================== -->
+<div  class="preloader">
+
+	<div class="sk-spinner sk-spinner-pulse"></div>
+
+</div>
+
+<section id="home" class="parallax-section" style="overflow: hidden;">
+    <div style="background-color: rgba(0,0,0,0.7); width:100%; height: 100%; overflow: auto;">
+    	<div class="container">
+    	    <div style="margin-top: 40px;">
+    	        <img src="images/logo_1.png" data-wow-delay="0.9s" width="250px" class="img-responsive wow bounceIn">
+        	    <center>
+        	        
+        	        <div class="col-md-offset-1 col-md-10 col-sm-12">
+        				<h3 data-wow-delay="1.7s" class="wow bounceIn" style="color: white;">
+        				    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.  
+        				</h3>
+        				
+        				<div id="newsletter" data-wow-delay="2.5s" class="newsletter_detail wow bounceIn" style="background:none;">
+        					<form onSubmit="return onSubmitListener(event);" id="newsletter-signup">
+        						<div class="col-md-4 col-sm-4">
+        							<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+        					  	</div>
+        						<div class="col-md-4 col-sm-4">
+        							<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+        					  	</div>
+        					  	<div class="col-md-4 col-sm-4">
+        							<input name="phone" type="text" class="form-control" id="phone" placeholder="Phone">
+        					  	</div>
+        						<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+        							<input name="submit" type="submit" class="form-control" id="submit" value="SIGN UP">
+        						</div>
+        				  	</form>
+        				</div>
+        			</div>
+        	    
+        	    </center>
+    		</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     SCRIPTS   
+============================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+<script>
+    function onSubmitListener(event) {
+        event.preventDefault();
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var phone = $('#phone').val();
+        
+        if(name == '') {
+            iziToast.error({
+                title: 'Error',
+                message: 'Name is Required',
+            });
+            return;
+        }
+        
+        if(email == '') {
+            iziToast.error({
+                title: 'Error',
+                message: 'Email is Required',
+            });
+            return;
+        }
+        
+        if(phone == '') {
+            iziToast.error({
+                title: 'Error',
+                message: 'Phone is Required',
+            });
+            return;
+        }
+        
+        $.ajax({
+			type:'POST',
+			url:'action.php',
+			data:{name: name, email: email, phone: phone},
+			cache:false,
+			beforeSend: function(){
+			    iziToast.destroy();
+                iziToast.info({
+                    title: 'Loading',
+                    message: 'Your data is submitting!',
+                });
+            },
+            
+			success:function(result){
+			    iziToast.destroy();
+			    iziToast.success({
+                    title: 'Success!',
+                    message: 'Successfully submitted!',
+                });
+                $('#name').val('');
+                $('#email').val('');
+                $('#phone').val('');
+			}
+		})
+        return false;
+    }
+</script>
+</body>
+</html>

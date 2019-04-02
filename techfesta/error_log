@@ -1,0 +1,5 @@
+[14-Mar-2019 08:12:00 America/New_York] PHP Warning:  wordwrap() expects parameter 2 to be integer, string given in /home/starzuav/myeverydayatlas.com/techfesta/action.php on line 7
+[14-Mar-2019 08:13:24 America/New_York] PHP Warning:  wordwrap() expects parameter 2 to be integer, string given in /home/starzuav/myeverydayatlas.com/techfesta/action.php on line 7
+[16-Mar-2019 03:01:54 America/New_York] PHP Notice:  Undefined variable: name in /home/starzuav/myeverydayatlas.com/techfesta/action.php on line 8
+[16-Mar-2019 03:32:19 America/New_York] PHP Notice:  Undefined variable: name in /home/starzuav/myeverydayatlas.com/techfesta/action.php on line 8
+[16-Mar-2019 03:36:17 America/New_York] PHP Notice:  Undefined variable: Name in /home/starzuav/myeverydayatlas.com/techfesta/action.php on line 8

@@ -5,7 +5,7 @@
 
 
 $servername = "localhost";
-$username = "ph3n1x";
+$username = "root";
 $password = "ph3n1x";
 
 // Create connection
@@ -16,8 +16,5 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     echo "Connection error";
 } 
-else
-    {
-    echo "Connected with database";
-}
+echo "Connected with database";
 ?>
